@@ -1,0 +1,11 @@
+
+
+
+
+annotations:
+version: 10.2.1
+
+image:
+  registry: docker.io
+  repository: bitnami/nginx
+  tag: 1.20
