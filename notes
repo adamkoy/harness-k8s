@@ -1,0 +1,36 @@
+my-release bitnami/nginx
+
+
+tar xf my-helm-chart-1.0.0.tgz
+
+
+add in variable to the helm chart
+- create the image 
+
+
+Do a helm install with diff tags - 
+
+1.23
+1.21.6
+1.20
+
+Name	Description	Value
+image.registry	NGINX image registry	docker.io
+image.repository	NGINX image repository	bitnami/nginx
+image.tag	NGINX image tag (immutable tags are recommended)	1.23.1-debian-11-r18
+
+helm install nginx-test-2 bitnami/nginx --set image.tag=1.20
+
+http://20.108.142.124:80
+
+
+az aks nodepool add \ 
+    --resource-group cats_inc_group \ 
+    --cluster-name cats-inc \ 
+    --name mynodepool \ 
+    --node-count 2 \ 
+    --node-vm-size  Standard_D4s_v4 \ 
+    --mode System \ 
+    --no-wait
+
+    az aks nodepool add --cluster-name cats-inc --kubernetes-version 1.23.8 --name nodepool1 --node-count 1
